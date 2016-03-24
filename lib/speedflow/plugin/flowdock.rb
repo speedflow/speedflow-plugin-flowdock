@@ -1,4 +1,6 @@
 require 'speedflow/plugin/flowdock/version'
+require 'speedflow/plugin/flowdock/configuration'
+require 'speedflow/plugin/flowdock/client'
 
 # Speedflow GEM, help you to boost your flow and keep your time.
 module Speedflow
@@ -10,8 +12,8 @@ module Speedflow
       # arguments - Hash of arguments.
       #
       # Returns nothing.
-      def self.action_notify(_)
-        # TODO: Do action
+      def self.action_notify(arguments)
+        Client.new(arguments).notify
       end
     end
   end

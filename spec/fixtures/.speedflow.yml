@@ -1,0 +1,19 @@
+# Only used by a local test:
+#
+# rake install:local && \
+# speedflow flow test --config spec/fixtures/.speedflow.yml --message="Test"
+---
+plugins:
+  - flowdock
+
+flow:
+  test:
+    - plugin: flowdock
+      action: notify
+      arguments:
+        message:
+          default: "Test"
+
+flowdock:
+  token: "{FLOWDOCK_TOKEN}"
+  flow:  "{FLOWDOCK_FLOW_ID}"
