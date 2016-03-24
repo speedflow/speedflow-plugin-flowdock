@@ -1,0 +1,1 @@
+require 'speedflow/plugin/flowdock'
