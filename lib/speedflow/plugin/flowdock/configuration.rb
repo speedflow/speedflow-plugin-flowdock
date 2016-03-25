@@ -10,6 +10,11 @@ module Speedflow
         #
         # arguments - Hash of arguments.
         #
+        # Examples
+        #
+        #    Configuration.new({})
+        #    # => <Speedflow::Plugin::Flowdock::Configuration>
+        #
         # Returns nothing.
         def initialize(arguments)
           @arguments = arguments
