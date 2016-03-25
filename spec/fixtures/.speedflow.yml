@@ -13,6 +13,15 @@ flow:
       arguments:
         message:
           default: "Test"
+    - plugin: flowdock
+      action: notify
+      arguments:
+        message:
+          default: "Specific flow"
+        flow:
+          default: "{FLOWDOCK_FLOW_ID}"
+        tags:
+          default: "other,flow"
 
 flowdock:
   token: "{FLOWDOCK_TOKEN}"

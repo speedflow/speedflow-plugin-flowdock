@@ -21,9 +21,9 @@ module Speedflow
         #
         # Returns nothing.
         def notify
-          flow    = @config.by_config('flow')
+          flow    = @config.by_input('flow', @config.by_config('flow'))
           message = @config.by_input('message')
-          tags    = ['speedflow']
+          tags    = ['speedflow'].concat(@config.by_input('tags').split(','))
 
           flowdock_client.chat_message(flow: flow, content: message, tags: tags)
         end
