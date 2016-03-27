@@ -8,11 +8,11 @@
 
 :package: A Speedflow plugin to work with Flowdock.
 
-## How to install this plugin?
+## How to install?
 
 `gem install speedflow-plugin-flowdock`
 
-## How to configure this plugin?
+## How to configure?
 
 `.speedflow.yml` :
 ```yml
