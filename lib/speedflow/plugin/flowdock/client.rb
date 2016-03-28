@@ -31,6 +31,10 @@ module Speedflow
           tags    = ['speedflow'].concat(@config.by_input('tags').split(','))
 
           flowdock_client.chat_message(flow: flow, content: message, tags: tags)
+        rescue ::Flowdock::ApiError => exception
+          # TODO: Improve communication with core for errors
+          puts exception.message
+          abort
         end
 
         # Public: Flowdock client
