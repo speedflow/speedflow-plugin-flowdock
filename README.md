@@ -34,7 +34,7 @@ export FLOWDOCK_TOKEN="..."
 export FLOWDOCK_FLOW_ID="..."
 ```
 
-### How to use this plugin?
+### How to use in my flow?
 
 `.speedflow.yml` :
 ```yml
