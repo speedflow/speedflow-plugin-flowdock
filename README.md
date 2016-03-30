@@ -38,6 +38,8 @@ export FLOWDOCK_FLOW_ID="..."
 
 `.speedflow.yml` :
 ```yml
+#...
+
 flow:
   test:
     - plugin: flowdock
@@ -49,7 +51,10 @@ flow:
 
 or
 
+`.speedflow.yml` :
 ```yml
+#...
+
 flow:
   test:
     - plugin: flowdock
