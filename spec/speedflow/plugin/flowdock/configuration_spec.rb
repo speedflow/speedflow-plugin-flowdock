@@ -4,8 +4,8 @@ describe Speedflow::Plugin::Flowdock::Configuration do
   let(:config) do
     message     = { 'value' => 'hello' }
     tags        = { 'value' => 'foo,bar,baz' }
-    jira_config = { 'token' => 'foo', 'flow' => 'bar' }
-    config      = { 'flowdock' => jira_config }
+    fd_config   = { 'token' => 'foo', 'flow' => 'bar' }
+    config      = { 'flowdock' => fd_config }
     args        = { 'tags' => tags, 'message' => message, '_config' => config }
     Speedflow::Plugin::Flowdock::Configuration.new(args)
   end
