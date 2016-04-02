@@ -20,6 +20,15 @@ module Speedflow
           @arguments = arguments
         end
 
+        # Public: Auth configuration.
+        #
+        # Returns Hash of auth configuration.
+        def auth
+          {
+            api_token: by_config('token')
+          }
+        end
+
         # Public: Get a specific config.
         #
         # key           - Key of config.
