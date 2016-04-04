@@ -1,6 +1,3 @@
-require 'tty-prompt'
-require 'json'
-
 module Speedflow
   module Plugin
     module Flowdock
