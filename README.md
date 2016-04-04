@@ -1,6 +1,7 @@
 # Speedflow plugin Flowdock
 
 [![Build Status](https://travis-ci.org/speedflow/speedflow-plugin-flowdock.svg?branch=master)](https://travis-ci.org/speedflow/speedflow-plugin-flowdock)
+[![Dependency Status](https://gemnasium.com/speedflow/speedflow-plugin-flowdock.svg)](https://gemnasium.com/speedflow/speedflow-plugin-flowdock)
 [![Gem Version](https://badge.fury.io/rb/speedflow-plugin-flowdock.svg)](https://badge.fury.io/rb/speedflow-plugin-flowdock)
 [![Code Climate](https://codeclimate.com/github/speedflow/speedflow-plugin-flowdock/badges/gpa.svg)](https://codeclimate.com/github/speedflow/speedflow-plugin-flowdock)
 [![Test Coverage](https://codeclimate.com/github/speedflow/speedflow-plugin-flowdock/badges/coverage.svg)](https://codeclimate.com/github/speedflow/speedflow-plugin-flowdock/coverage)
