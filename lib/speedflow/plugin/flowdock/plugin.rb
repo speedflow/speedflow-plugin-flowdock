@@ -19,7 +19,8 @@ module Speedflow
 
           prompt.ok '[FLOWDOCK] Flow was notified'
 
-          # ACTION: action_notify, OUTPUT: { 'message' => String, 'tags' => [] }
+          # ACTION: action_notify
+          # OUTPUT: { 'message' => String, 'tags' => [] }
           { 'message' => message, 'tags' => tags }
         end
 
