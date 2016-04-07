@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   # Core dependencies
   spec.add_dependency 'speedflow', '~> 0.3'
   spec.add_dependency 'flowdock', '~> 0.7.1'
-  spec.add_dependency 'tty-prompt', '~> 0.5.0'
 
   # Development dependencies
   spec.add_development_dependency 'bundler', '~> 1.11'
