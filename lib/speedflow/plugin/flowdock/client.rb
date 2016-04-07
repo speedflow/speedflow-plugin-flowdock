@@ -5,20 +5,23 @@ module Speedflow
     module Flowdock
       # Flowdock client
       class Client
-        # @return [Prompt] Prompt.
-        attr_writer :prompt
+        # @return [Speedflow::Plugin::Configuration] Plugin configuration.
+        attr_reader :config
+
+        # @return [Speedflow::Plugin::Prompt] Plugin prompt.
+        attr_reader :prompt
 
         # @return [Flowdock::Client] Flowdock client.
         attr_writer :flowdock_client
 
         # Initialize.
         #
-        # config - Speedflow::Plugin::Flowdock::Configuration instance.
-        # prompt - Speedflow::Plugin::Flowdock::Prompt instance.
+        # config - <Speedflow::Plugin::Configuration> instance.
+        # prompt - <Speedflow::Plugin::Prompt> instance.
         #
         # Examples
         #
-        #    Client.new({}, Speedflow::Plugin::Flowdock::Prompt.new)
+        #    Client.new({}, Speedflow::Plugin::Prompt.new)
         #    # => <Speedflow::Plugin::Flowdock::Client>
         #
         # Returns nothing.
@@ -48,22 +51,16 @@ module Speedflow
         def safe
           yield
         rescue ::Flowdock::ApiError => exception
-          prompt.errors exception
+          prompt.errors 'Flowdock', exception
           abort
         end
 
         # Public: Flowdock client.
         #
-        # Returns ::Flowdock::Client instance.
+        # Returns <::Flowdock::Client> instance.
         def flowdock_client
-          @flowdock_client ||= ::Flowdock::Client.new(@config.auth)
-        end
-
-        # Public: Prompt.
-        #
-        # Returns ::Speedflow::Plugin::Flowdock::Prompt instance.
-        def prompt
-          @prompt ||= ::Speedflow::Plugin::Flowdock::Prompt.new
+          config = { api_token: @config.by_config('token') }
+          @flowdock_client ||= ::Flowdock::Client.new(config)
         end
       end
     end

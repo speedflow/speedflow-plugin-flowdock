@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.3'
 
   # Core dependencies
+  spec.add_dependency 'speedflow', '~> 0.3'
   spec.add_dependency 'flowdock', '~> 0.7.1'
   spec.add_dependency 'tty-prompt', '~> 0.5.0'
 

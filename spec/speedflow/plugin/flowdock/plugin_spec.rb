@@ -1,15 +1,13 @@
 require 'spec_helper'
 
-describe Speedflow::Plugin::Flowdock::PluginCore do
+describe Speedflow::Plugin::Flowdock::Plugin do
   let(:plugin) do
-    plugin = ::Speedflow::Plugin::Flowdock::PluginCore.new({})
-    plugin.config = double
-    plugin.prompt = double
+    plugin = ::Speedflow::Plugin::Flowdock::Plugin.new(double, double)
     plugin.client = double
     plugin
   end
 
-  it '.action_create_issue' do
+  it '.action_notify' do
     allow(plugin.config)
       .to receive(:by_config)
       .with('flow')
@@ -26,7 +24,7 @@ describe Speedflow::Plugin::Flowdock::PluginCore do
       .to receive(:by_input)
       .with('tags')
       .and_return('foo,bar,baz')
-    
+
     allow(plugin.prompt)
       .to receive(:ok)
       .with('[FLOWDOCK] Flow was notified')
@@ -35,6 +33,8 @@ describe Speedflow::Plugin::Flowdock::PluginCore do
       .to receive(:notify)
       .with('XXX', 'Hello', %w(foo bar baz))
 
-    plugin.action_notify
+    expected_hash = { 'message' => 'Hello', 'tags' => %w(foo bar baz) }
+    expect(plugin.action_notify)
+      .to eq expected_hash
   end
 end
